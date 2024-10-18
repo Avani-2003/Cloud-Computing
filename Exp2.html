@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplacation table</title>
+    <style>
+        .table {
+            text-align: center;
+        }
+        .result-container {
+            display: flex-col;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .result {
+            margin: 0 10px;
+        }
+    </style>
+    </style>
+</head>
+<div class="table">
+    <h1>Multiplication Table</h1>
+    <label for="number">Enter a number:</label>
+    <input type="text" id="number"><br><br>
+    <button onclick="generateTableForLoop()">Generate Table using For</button>
+    <button onclick="generateTable()">Generate Table using While</button>
+    <button onclick="generateTableDoWhileLoop()">Generate Table using Do While</button>
+    <div class="result-container">
+        <div id="result2" class="result"></div>
+        <div id="result" class="result"></div>
+        <div id="result3" class="result"></div>
+    </div>
+</div>
+
+<script src="exp2.js"></script>
+</body>
+</html>

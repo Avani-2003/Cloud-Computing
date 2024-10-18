@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .form-data {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Congratulations!</h1>
+        <p>Welcome to our platform. Your form has been submitted successfully!</p>
+
+        <div class="form-data">
+            <h2>Submitted Information:</h2>
+            <p id="name"></p>
+            <p id="address"></p>
+            <p id="city"></p>
+            <p id="state"></p>
+            <p id="gender"></p>
+            <p id="mobile"></p>
+            <p id="email"></p>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve the data from localStorage
+        const formData = JSON.parse(localStorage.getItem("formData"));
+
+        // Display the data if available
+        if (formData) {
+            document.getElementById("name").textContent = `Name: ${formData.name}`;
+            document.getElementById("address").textContent = `Address: ${formData.address}`;
+            document.getElementById("city").textContent = `City: ${formData.city}`;
+            document.getElementById("state").textContent = `State: ${formData.state}`;
+            document.getElementById("gender").textContent = `Gender: ${formData.gender}`;
+            document.getElementById("mobile").textContent = `Mobile: ${formData.mobile}`;
+            document.getElementById("email").textContent = `Email: ${formData.email}`;
+        }
+    </script>
+</body>
+
+</html>

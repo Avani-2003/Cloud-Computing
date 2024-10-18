@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+      }
+      
+      h1 {
+        color: green;
+        margin-bottom: 100px;
+      }
+      p {
+        font-size: 1.2em;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Success!</h1>
+      <p>Your information has been successfully saved. <br> Here's what we have received: <br></p>
+      <div id="studentInfo"></div>
+    </div>
+
+    <script>
+      // Retrieve data from localStorage
+      const studentData = JSON.parse(localStorage.getItem("studentData"));
+
+      
+      if (studentData) {
+          
+        const studentInfoDiv = document.getElementById("studentInfo");
+        studentInfoDiv.innerHTML = `
+          <p><strong>Name:</strong> ${studentData.name}</p>
+          <p><strong>Address:</strong> ${studentData.address}</p>
+          <p><strong>City:</strong> ${studentData.city}</p>
+          <p><strong>State:</strong> ${studentData.state}</p>
+          <p><strong>Gender:</strong> ${studentData.gender}</p>
+          <p><strong>Mobile:</strong> ${studentData.mobile}</p>
+          <p><strong>Email:</strong> ${studentData.email}</p>
+        `;
+      } else {
+        document.getElementById("studentInfo").innerText =
+          "No data found. Please fill the form first.";
+      }
+    </script>
+  </body>
+</html>
